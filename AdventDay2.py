@@ -6,14 +6,27 @@ from ReadFile import read_files
 
 lines: List[str] = read_files("RockPaperScissors.txt")
 
-my_score: int = 0
+def day2_part1(lines: str) -> int:
+    my_score: int = 0
+    for i in lines:
+        opp_choice = 'ABC'.index(i[0])
+        you_choice = 'XYZ'.index(i[2])
+        comp = (you_choice - opp_choice + 1) % 3
 
-for i in lines:
-    opp_choice = 'ABC'.index(i[0])
-    you_choice = 'XYZ'.index(i[2])
-    comp = (you_choice - opp_choice + 1) % 3
+        my_score += (comp * 3) + (you_choice + 1)
+    return my_score
 
-    my_score += (comp * 3) + (you_choice + 1)
+def day2_part2(lines: str) -> int:
+    my_score: int = 0
+    for i in lines:
+        if 'XYZ'.index(i[2]) == 0: # lost
+            my_score += ('BCA'.index(i[0]) + 1)
+        elif 'XYZ'.index(i[2]) == 1: # draw
+            my_score += 3 + ('ABC'.index(i[0]) + 1)
+        else: # win
+            my_score += 6 + ('CAB'.index(i[0]) + 1)
+    return my_score
 
 
-print(my_score)
+print(day2_part1(lines))
+print(day2_part2(lines))
