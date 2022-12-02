@@ -1,10 +1,8 @@
 from typing import List
-
-lines: List[str] = []
+from ReadFile import read_files
 
 # Read the file
-with open('CalorieCountingDay1.txt') as f:
-    lines = f.read().splitlines()
+lines: List[str] = read_files('CalorieCountingDay1.txt')
 
 def sorted_calories(list: List):
     elfs_calories: List[int] = []
