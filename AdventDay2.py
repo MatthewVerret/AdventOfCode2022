@@ -9,11 +9,7 @@ lines: List[str] = read_files("RockPaperScissors.txt")
 def day2_part1(lines: str) -> int:
     my_score: int = 0
     for i in lines:
-        opp_choice = 'ABC'.index(i[0])
-        you_choice = 'XYZ'.index(i[2])
-        comp = (you_choice - opp_choice + 1) % 3
-
-        my_score += (comp * 3) + (you_choice + 1)
+        my_score += (('XYZ'.index(i[2]) - 'ABC'.index(i[0]) + 1) % 3 * 3) + ('XYZ'.index(i[2]) + 1)
     return my_score
 
 def day2_part2(lines: str) -> int:
