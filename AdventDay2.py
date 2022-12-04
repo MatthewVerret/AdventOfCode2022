@@ -4,7 +4,7 @@ from ReadFile import read_files
 # X == Rock, Y == Paper, Z == Scissors -> You
 #   1pts   ,     2pts  ,     3pts
 
-lines: List[str] = read_files("RockPaperScissors.txt")
+lines: List[str] = read_files("Day2.txt")
 
 def day2_part1(lines: str) -> int:
     my_score: int = 0

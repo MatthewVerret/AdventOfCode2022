@@ -1,9 +1,7 @@
 from typing import List
-
 from ReadFile import read_files
 
-# ord() permet de savoir la valeur en ASCII
-backpacks: List[str] = read_files("Backpacks.txt")
+backpacks: List[str] = read_files("Day3.txt")
 
 def day3_part1(bp: List[str]) -> int:
     p_sum: int = 0

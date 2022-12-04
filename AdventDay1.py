@@ -2,7 +2,7 @@ from typing import List
 from ReadFile import read_files
 
 # Read the file
-lines: List[str] = read_files('CalorieCountingDay1.txt')
+lines: List[str] = read_files('Day1.txt')
 
 def sorted_calories(list: List):
     elfs_calories: List[int] = []
